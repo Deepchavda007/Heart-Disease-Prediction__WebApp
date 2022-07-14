@@ -11,44 +11,49 @@ st.text(" SEX : ( Male = 1 | Female = 0 )")
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    age = st.text_input('Age')
+    age = st.number_input('Age', max_value=70)
 
 with col2:
-    sex = st.text_input('Sex')
+    sex = st.number_input('Sex', max_value=1, step=1)
 
 with col3:
-    cp = st.text_input('Chest Pain types')
+    cp = st.number_input('Chest Pain types', max_value=3, step=1)
 
 with col1:
-    trestbps = st.text_input('Resting Blood Pressure')
+    trestbps = st.number_input('Resting Blood Pressure', max_value=200)
 
 with col2:
-    chol = st.text_input('Serum Cholestoral in mg/dl')
+    chol = st.number_input('Serum Cholestoral in mg/dl', max_value=500)
 
 with col3:
-    fbs = st.text_input('Fasting Blood Sugar > 120 mg/dl')
+    fbs = st.number_input(
+        'Fasting Blood Sugar > 120 mg/dl', max_value=1, step=1)
 
 with col1:
-    restecg = st.text_input('Resting Electrocardiographic results')
+    restecg = st.number_input(
+        'Resting Electrocardiographic results', max_value=1, step=1)
 
 with col2:
-    thalach = st.text_input('Maximum Heart Rate achieved')
+    thalach = st.number_input('Maximum Heart Rate achieved', max_value=200)
 
 with col3:
-    exang = st.text_input('Exercise Induced Angina')
+    exang = st.number_input('Exercise Induced Angina', max_value=1, step=1)
 
 with col1:
-    oldpeak = st.text_input('ST depression induced by exercise')
+    oldpeak = st.number_input(
+        'ST depression induced by exercise', max_value=5.0, step=0.5)
 
 with col2:
-    slope = st.text_input('Slope of the peak exercise ST segment')
+    slope = st.number_input(
+        'Slope of the peak exercise ST segment', max_value=2, step=1)
 
 with col3:
-    ca = st.text_input('Major vessels colored by flourosopy')
+    ca = st.number_input(
+        'Major vessels colored by flourosopy', max_value=2, step=1)
 
 with col1:
-    thal = st.text_input(
-        'thal: 0 = normal; 1 = fixed defect; 2 = reversable defect')
+    thal = st.number_input(
+        'thal: 0 = normal; 1 = fixed defect; 2 = reversable defect', max_value=3, step=1)
 
 # code for Prediction
 heart_diagnosis = ''
