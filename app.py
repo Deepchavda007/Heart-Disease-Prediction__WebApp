@@ -11,49 +11,53 @@ st.text(" SEX : ( Male = 1 | Female = 0 )")
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    age = st.number_input('Age', max_value=70)
+    age = st.number_input('Age', max_value=70, min_value=0)
 
 with col2:
-    sex = st.number_input('Sex', max_value=1, step=1)
+    sex = st.number_input('Sex', max_value=1, step=1, min_value=0)
 
 with col3:
-    cp = st.number_input('Chest Pain types', max_value=3, step=1)
+    cp = st.number_input('Chest Pain types', max_value=3, step=1, min_value=0)
 
 with col1:
-    trestbps = st.number_input('Resting Blood Pressure', max_value=200)
+    trestbps = st.number_input(
+        'Resting Blood Pressure', max_value=200, min_value=0)
 
 with col2:
-    chol = st.number_input('Serum Cholestoral in mg/dl', max_value=500)
+    chol = st.number_input('Serum Cholestoral in mg/dl',
+                           max_value=500, min_value=0)
 
 with col3:
     fbs = st.number_input(
-        'Fasting Blood Sugar > 120 mg/dl', max_value=1, step=1)
+        'Fasting Blood Sugar > 120 mg/dl', max_value=1, step=1, min_value=0)
 
 with col1:
     restecg = st.number_input(
-        'Resting Electrocardiographic results', max_value=1, step=1)
+        'Resting Electrocardiographic results', max_value=1, step=1, min_value=0)
 
 with col2:
-    thalach = st.number_input('Maximum Heart Rate achieved', max_value=200)
+    thalach = st.number_input(
+        'Maximum Heart Rate achieved', max_value=200, min_value=0)
 
 with col3:
-    exang = st.number_input('Exercise Induced Angina', max_value=1, step=1)
+    exang = st.number_input('Exercise Induced Angina',
+                            max_value=1, step=1, min_value=0)
 
 with col1:
     oldpeak = st.number_input(
-        'ST depression induced by exercise', max_value=5.0, step=0.5)
+        'ST depression induced by exercise', max_value=5.0, step=0.5, min_value=0.0)
 
 with col2:
     slope = st.number_input(
-        'Slope of the peak exercise ST segment', max_value=2, step=1)
+        'Slope of the peak exercise ST segment', max_value=2, step=1, min_value=0)
 
 with col3:
     ca = st.number_input(
-        'Major vessels colored by flourosopy', max_value=2, step=1)
+        'Major vessels colored by flourosopy', max_value=2, step=1, min_value=0)
 
 with col1:
     thal = st.number_input(
-        'thal: 0 = normal; 1 = fixed defect; 2 = reversable defect', max_value=3, step=1)
+        'thal: 0 = normal; 1 = fixed defect; 2 = reversable defect', max_value=3, step=1, min_value=0)
 
 # code for Prediction
 heart_diagnosis = ''
@@ -71,6 +75,4 @@ if st.button('Heart Disease Test Result'):
     else:
         heart_diagnosis = 'The person does not have any heart disease'
         st.success(heart_diagnosis)
-
-
-# st.success(heart_diagnosis)
+        st.balloons()
